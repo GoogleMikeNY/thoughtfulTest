@@ -23,33 +23,33 @@ Implement the function **`sort(width, height, length, mass)`** (units are centim
  */
 describe("index.js", () => {
   describe("when dealing with a STANDARD package", () => {
-    it("returns a normal package message", () => {
+    it("prints the **STANDARD** message", () => {
       const result = sort(10, 10, 10, 10);
       expect(result).toEqual("**STANDARD**");
     });
   });
   describe("when dealing with SPECIAL package", () => {
     describe("when a package is bulky", () => {
-      it("assigns to a bulky category when the width by height b length is eq or greater to 1,000,000", () => {
+      it("prints the **SPECIAL** message when the width by height by length is eq or greater to 1,000,000", () => {
         const result = sort(100, 100, 100, 4);
         expect(result).toEqual("**SPECIAL**");
       });
-      it("assigns to a bulky stack when a dimension is equal or great to 150", () => {
+      it("prints the **SPECIAL** message when a dimension is equal or greater than 150", () => {
         const result = sort(10, 150, 14, 4);
         expect(result).toEqual("**SPECIAL**");
       });
     });
-    it("assigns to a heavy package due to its mass being over 20kg", () => {
+    it("prints the **SPECIAL** message when the mass of a package is at or over 20kg", () => {
       const result = sort(1, 1, 1, 20);
       expect(result).toEqual("**SPECIAL**");
     });
   });
   describe("when dealing with a REJECTED package", () => {
-    it("is rejected when the volume is over 1000000 and mass is over 20", () => {
+    it("prints the **REJECTED** message when the volume is over 1000000 and mass is over 20", () => {
       const result = sort(120, 120, 120, 22);
       expect(result).toEqual("**REJECTED**");
     });
-    it("is rejected when one of the dimensions is over 150 and mass is over 20", () => {
+    it("prints the **REJECTED** when one of the dimensions is over 150 and mass is over 20", () => {
       const result = sort(160, 12, 12, 22);
       expect(result).toEqual("**REJECTED**");
     });
