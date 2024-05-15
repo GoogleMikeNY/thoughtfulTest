@@ -1,0 +1,15 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Thoughtful code test",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Michael Nunez",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0",
+    "prettier": "^3.2.5"
+  }
+}
