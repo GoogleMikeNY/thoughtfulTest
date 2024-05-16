@@ -39,9 +39,11 @@ describe("index.js", () => {
         expect(result).toEqual("**SPECIAL**");
       });
     });
-    it("prints the **SPECIAL** message when the mass of a package is at or over 20kg", () => {
-      const result = sort(1, 1, 1, 20);
-      expect(result).toEqual("**SPECIAL**");
+    describe("when a package is too heavy", () => {
+      it("prints the **SPECIAL** message when the mass of a package is at or over 20kg", () => {
+        const result = sort(1, 1, 1, 20);
+        expect(result).toEqual("**SPECIAL**");
+      });
     });
   });
   describe("when dealing with a REJECTED package", () => {
@@ -52,6 +54,20 @@ describe("index.js", () => {
     it("prints the **REJECTED** when one of the dimensions is over 150 and mass is over 20", () => {
       const result = sort(160, 12, 12, 22);
       expect(result).toEqual("**REJECTED**");
+    });
+  });
+
+  describe("When dealing with invalid inputs", () => {
+    it("returns an error when any of the values are not integers", () => {
+      expect(() => sort("a", "b", "c", "d")).toThrow(
+        "Invalid inputs: Values must be an Integer.",
+      );
+    });
+
+    it("returns an error when any of the values are equal or less than 0", () => {
+      expect(() => sort(0, -1, -2, -3)).toThrow(
+        "Invalid inputs: Values must be greater than Zero.",
+      );
     });
   });
 });
